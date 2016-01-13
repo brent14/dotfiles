@@ -1,3 +1,4 @@
+# THE BEGINNING
 
 # 
 #	Paths =======================================================================
@@ -21,17 +22,15 @@ fi
 #
 
 
+# folder movement & structure
 alias l='ls -lhGtF' 								# -l long listing, most recent first
 alias la='ls -AlGhtF' 								# -l long listing, most recent first, all files ( include dot )
 alias l.='ls -dFA .[^.]*'  								# only dot files
 alias cp='cp -iv'                           						# Preferred 'cp' implementation
 alias mv='mv -iv'                           						# Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     						# Preferred 'mkdir' implementation
-alias localip='ipconfig getifaddr en1' 						# current local ip on network
-alias f='open -a Finder ./'                 						# Opens current directory in MacOS Finder
-alias reload='source ~/.bash_profile' 						# reload bash profile
 
-
+# cpu & memory
 alias topmem='top -l 1 -o rsize | head -20' 					# top memory process
 alias psmem='ps wwaxm -o pid,stat,vsize,rss,time,command | head -10'	# ps memory process
 alias pscpu='ps wwaxr -o pid,stat,%cpu,time,command | head -10'		# ps processor process
@@ -47,23 +46,23 @@ alias netports='sudo lsof -i | grep LISTEN'					# All listening connections
 alias apip='open /private/etc/hosts'						# ip route
 alias apsite='open /private/etc/apache2/extra/httpd-vhosts.conf'		# virtual site
 
+# misc
+alias cputime='uptime'								# cpu uptime
+alias localip='ipconfig getifaddr en1' 						# current local ip on network
+alias f='open -a Finder ./'                 						# Opens current directory in MacOS Finder
+alias reload='source ~/.bash_profile' 						# reload bash profile
 
 #
 # 	FUNCS =======================================================================
 #
 
-#   ii:  display useful host related informaton
-#   -------------------------------------------------------------------
-function cputime() {
-        uptime
-        echo
-    }
 
+# my processcess
  function myproc() { 
  	ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; 
 }
 
-# Find file whose name starts with a given string  
+# find file whose name starts with a given string  
 function filess () { 
 	/usr/bin/find . -name "$@"'*' ; 
 }  
@@ -124,7 +123,8 @@ PS1='\n\n\u @ \h $(localip) \n\w\n$(__git_ps1)\n█ '
 #	 Git helper FUNCS =======================================================================
 #
 
-
+# still need to polish this one
+# check if git is up to date with remote
 function gitcheck(){
 	local b="$(git symbolic-ref HEAD 2>/dev/null)";
 
