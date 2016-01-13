@@ -25,15 +25,15 @@ fi
 # folder movement & structure
 alias l='ls -lhGtF' 								# -l long listing, most recent first
 alias la='ls -AlGhtF' 								# -l long listing, most recent first, all files ( include dot )
-alias l.='ls -dFA .[^.]*'  								# only dot files
-alias cp='cp -iv'                           						# Preferred 'cp' implementation
-alias mv='mv -iv'                           						# Preferred 'mv' implementation
-alias mkdir='mkdir -pv'                     						# Preferred 'mkdir' implementation
+alias l.='ls -dFA .[^.]*'  							# only dot files
+alias cp='cp -iv'                           					# Preferred 'cp' implementation
+alias mv='mv -iv'                           					# Preferred 'mv' implementation
+alias mkdir='mkdir -pv'                     					# Preferred 'mkdir' implementation
 
 # cpu & memory
 alias topmem='top -l 1 -o rsize | head -20' 					# top memory process
-alias psmem='ps wwaxm -o pid,stat,vsize,rss,time,command | head -10'	# ps memory process
-alias pscpu='ps wwaxr -o pid,stat,%cpu,time,command | head -10'		# ps processor process
+alias psmem='ps wwaxm -o pid,stat,vsize,rss,time,command | head -10'		# ps memory process
+alias pscpu='ps wwaxr -o pid,stat,%cpu,time,command | head -10'			# ps processor process
 alias topfull='top -l 9999999 -s 10 -o cpu'					# top list all process, refresh 10 seconds
 
 # network
@@ -49,7 +49,7 @@ alias apsite='open /private/etc/apache2/extra/httpd-vhosts.conf'		# virtual site
 # misc
 alias cputime='uptime'								# cpu uptime
 alias localip='ipconfig getifaddr en1' 						# current local ip on network
-alias f='open -a Finder ./'                 						# Opens current directory in MacOS Finder
+alias f='open -a Finder ./'                 					# Opens current directory in MacOS Finder
 alias reload='source ~/.bash_profile' 						# reload bash profile
 
 #
