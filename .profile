@@ -42,6 +42,7 @@ alias cputime='uptime'								# cpu uptime
 alias localip='hostname -I' 							# current local ip on network
 alias externalip='dig +short myip.opendns.com @resolver1.opendns.com' 	# external ip
 alias reload='source ~/.profile' 						# reload bash profile
+alias cronlog='sudo tail -f /var/log/syslog' 			# log from crontab
 
 #
 # 	FUNCS =======================================================================
